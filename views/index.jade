@@ -1,0 +1,22 @@
+extends ../layouts/default
+
+block head
+  title Talent Connect
+
+block neck
+  link(rel='stylesheet', href='/views/index.min.css?#{cacheBreaker}')
+
+block body
+  div.jumbotron
+    h1 Talent Connect
+    if user && user.username
+      div.greetings
+        | Welcome, #{user.username}
+    p.lead
+      | Sign up with us and list your job openings
+    div
+      if !(user.username)
+         a.btn.btn-primary.btn-lg(href='/signup/') Create an Account
+      | &nbsp;&nbsp;
+      //- if user.username
+      //-    a.btn.btn-warning.btn-lg(href='/login/forgot/') 

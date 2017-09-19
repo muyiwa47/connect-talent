@@ -1,0 +1,31 @@
+extends ../../layouts/default
+
+block head
+  title Post Job
+
+block body
+  div.row
+    div.col-sm-12
+      div.page-header
+        h1 Post Job
+        form(method='post', action='/jobs')
+          div.form-group
+            label Job Title:
+            input.form-control(type='text', name='title' required)
+          div.form-group
+            label Job Description & Qualifications:
+            textarea.form-control(type='text', name='description' required)
+          div.form-group
+            label Questions:
+            textarea.form-control(type='text', name='name')
+          div.form-group
+            label Date:
+            input.form-control(type='text', name='date' value="#{moment().format('L')}" readonly)
+          div.form-group
+            label Max Salary:
+            input.form-control(type='text', name='maxSalary')
+          div.form-group
+            label Min Salary:
+            input.form-control(type='text', name='minSalary')
+          div.form-group
+            button.btn.btn-primary.btn-signup(type='submit') Post Job

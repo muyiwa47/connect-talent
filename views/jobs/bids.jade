@@ -1,0 +1,37 @@
+extends ../../layouts/default
+
+block head
+  title Bid Post
+
+block body
+  div.row
+    div.col-sm-12
+      div.page-header
+        h1 Bid for Job
+        form(method='post', action='/jobs/bids')
+          div.form-group
+            label Job ID:
+            input.form-control(type='text', name='jobID' value='#{event._id}' readonly)
+          div.form-group
+            label Questions:
+            p #{event.name}
+          div.form-group
+            label Posted By:
+            input.form-control(type='text', name='username' value='#{event.username}' readonly) 
+          div.form-group
+            label Anwsers:
+            textarea.form-control(type='text', name='anwsers' value='') 
+          div.form-group
+            label Date:
+            input.form-control(type='text', name='date' value="#{moment().format('L')}" readonly)
+          div.form-group
+            label Percentage Salary:
+            input.form-control(type='text', name='percentSalary' value='')
+          div.form-group
+            label percentage Fee:
+            input.form-control(type='text', name='percentFee' value='')
+          div.form-group
+            label Total:
+            input.form-control(type='text', name='total' value='')
+          div.form-group
+            button.btn.btn-primary.btn-signup(type='submit') Bid Job

@@ -1,0 +1,30 @@
+.events li{
+	list-style: none;
+	margin: 20px 0;
+	line-height: 1.9em;
+}
+body {
+    font-family: candara;
+}
+.navbar-default i {
+    padding-right: 5px
+}
+
+#messages li {
+   list-style-type: none;
+   background-color: #0377cc;
+   color: white;
+   padding :10px;
+}
+
+body {
+
+}
+
+.container {
+    background-color : white;
+}
+
+.footer {
+ 
+}

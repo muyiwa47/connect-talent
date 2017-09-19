@@ -1,0 +1,20 @@
+extends ../../layouts/default
+
+block head
+ title Recieved Bids 
+
+block body
+ div.row
+  div.col-sm-8
+   div.page-header
+    h1 Recieved Bids 
+   ul.events
+    each job, i in data
+       li
+        - var name = user.username
+        - var post = job.username
+        if post == name 
+          strong #{job.title}
+          &nbsp;&nbsp; 
+          i.fa.fa-pencil 
+          a(href='/bids/show/#{job._id}')  Bids

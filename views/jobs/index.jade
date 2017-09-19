@@ -1,0 +1,18 @@
+extends ../../layouts/default
+
+block head
+ title View Jobs Listing
+block body
+ div.row
+  div.col-sm-12
+   div.page-header
+    h1 Jobs
+   ul.events
+    each job, i in data
+     li
+      | #{job.title}
+      -var newdate = moment(job.date).format("MM-DD-YYYY")
+      p #{newdate} &nbsp
+        a(href='/jobs/show/#{job._id}',
+        class='fa fa-angle-double-down') &nbsp Read More
+ include _paginate

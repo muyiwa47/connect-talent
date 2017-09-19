@@ -1,0 +1,28 @@
+extends ../../layouts/default
+
+block head
+  title Edit Post
+
+block body
+  div.row
+    div.col-sm-12
+      div.page-header
+        h1 Update Post
+        form(method='post', action='/jobs/update/#{event._id}')
+          div.form-group
+            label Job Title:
+            input.form-control(type='text', name='title' value='#{event.title}' required)
+          div.form-group
+            label Job Description & Qualifications:
+            textarea.form-control(type='text', name='description' required) #{event.description}
+          div.form-group
+            label Questions:
+            textarea.form-control(type='text', name='name') #{event.name}
+          div.form-group
+            label Minimum Salary:
+            input.form-control(type='text', name='maxSalary' value='#{event.maxSalary}')
+          div.form-group
+            label Maximum Salary:
+            input.form-control(type='text', name='minSalary' value='#{event.minSalary}')
+          div.form-group
+            button.btn.btn-primary.btn-signup(type='submit') Update Job

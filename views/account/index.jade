@@ -1,0 +1,32 @@
+extends ../../layouts/account
+
+block head
+  title Talent Connect 
+
+block neck
+  link(rel='stylesheet', href='/views/account/index.min.css?#{cacheBreaker}')
+
+block feet
+  script(src='/views/account/index.min.js?#{cacheBreaker}')
+
+block body
+  div.row
+    div.col-sm-12
+      div.page-header
+        h1 Welcome,
+
+        - var language = event.accountType
+        if language == "client"
+            h3 Account Type : #{event.accountType}
+        else
+            h3 Account Type : #{event.accountType}
+//        p 
+//        h1 Jobs
+//           ul.events
+//            each job, i in data
+//             li
+//              | #{job.title}
+//              -var newdate = moment(job.date).format("MM-DD-YYYY")
+//              p #{newdate} &nbsp
+//                a(href='/jobs/show/#{job._id}',
+//                class='fa fa-angle-double-down') &nbsp Read More

@@ -1,0 +1,22 @@
+extends ../../layouts/default
+
+block head
+ title Recieved Bids 
+
+block body
+ div.row
+  div.col-sm-12
+   div.page-header
+    h1 Recieved Bids (#{nums})
+   ul.event-list.list-group
+    each event, i in data
+     li.list-group-item
+      strong Username : #{event.username} <br>
+      -var newdate = moment(event.date).format("MM-DD-YYYY")
+      strong Date : #{newdate} <br>
+      strong Anwsers : #{event.anwsers} <br>
+      strong Total : #{event.total}
+      &nbsp;&nbsp; 
+      i.fa.fa-pencil 
+      a(href='/bids/show/#{event._id}')  Connect
+    

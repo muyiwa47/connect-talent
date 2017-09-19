@@ -1,0 +1,39 @@
+extends ../../layouts/default
+
+block head
+    title #{event.title}
+
+block body
+    div.row
+        div.col-sm-12
+            div.page-header
+                h1 #{event.title}
+                    small &nbsp; Posted by #{event.username}
+            ul.event-list.list-group
+                li.list-group-item
+                    strong Job Title: &nbsp
+                    | #{event.title}
+                li.list-group-item
+                    strong Details: &nbsp
+                    | #{event.description}
+                li.list-group-item
+                    strong Maxamum Salary: &nbsp
+                    | #{event.maxSalary}
+                li.list-group-item
+                    strong Minimum Salary: &nbsp
+                    | #{event.minSalary}
+                li.list-group-item
+                    strong Questions: &nbsp
+                    | #{event.name}
+                li.list-group-item
+                    -var newdate = moment(event.date).format("MM-DD-YYYY")
+                    strong Date: &nbsp
+                    | #{newdate}
+            p #{event.description}
+            p 
+                i.fa.fa-arrow-circle-left
+                a(href='/jobs')  Back &nbsp;
+                if user.accountType == "recruiter"
+                   i.fa.fa-microphone &nbsp; 
+                   a(href='/jobs/bids/#{event._id}')  Bid 
+

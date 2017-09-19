@@ -1,0 +1,14 @@
+//- _paginate.pug
+ 
+//- This examples makes use of Bootstrap 3.x pagination classes
+ 
+
+.navigation.well-sm#pagination
+    div.pager
+      if pageCount.hasPrev
+         i.fa.fa-arrow-circle-left&nbsp
+         a(href='?page='+pageCount.prev) Previous&nbsp;
+         &nbsp|&nbsp
+      if pageCount.hasNext
+         a(href='?page='+pageCount.next) &nbspNext&nbsp
+         i.fa.fa-arrow-circle-right

@@ -1,0 +1,19 @@
+extends ../../layouts/default
+
+block head
+ title My Jobs
+block body
+ div.row
+  div.col-sm-8
+   div.page-header
+    h1 My Jobs
+   ul.events
+    each job, i in data
+     li
+      strong #{job.title}
+      &nbsp;&nbsp; 
+      i.fa.fa-pencil 
+      a(href='/jobs/edit/#{job._id}')  Edit
+      &nbsp;&nbsp;
+      i.fa.fa-trash 
+      a(id='deleteEvent', data-delete='#{job._id}', href='/jobs/delete/#{job._id}')  Delete
