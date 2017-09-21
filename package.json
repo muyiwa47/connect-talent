@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "grunt",
-    "postinstall": "grunt build",
+    "postinstall": "grunt build"
   },
   "author": "Banjy Oguntade<banji.oguntade@gmail.com>",
   "license": "Open Source",
